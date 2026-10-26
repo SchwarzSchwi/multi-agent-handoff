@@ -1,0 +1,1 @@
+{"max_calls_per_agent":8,"max_actions_per_agent":8,"max_output_tokens_per_agent":4096,"max_seconds_per_agent":240,"max_total_seconds":600}

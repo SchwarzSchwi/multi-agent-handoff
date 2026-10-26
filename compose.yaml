@@ -1,0 +1,18 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    volumes: [ollama-data:/root/.ollama]
+  pull:
+    image: ollama/ollama:latest
+    depends_on: [ollama]
+    environment:
+      OLLAMA_HOST: http://ollama:11434
+    entrypoint: ["ollama", "pull", "qwen2.5-coder:1.5b"]
+  lab:
+    build: .
+    depends_on: [ollama]
+    environment:
+      OLLAMA_URL: http://ollama:11434
+    volumes: ["./out:/output"]
+volumes:
+  ollama-data:
