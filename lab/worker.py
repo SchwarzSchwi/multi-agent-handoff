@@ -32,5 +32,5 @@ def main():
             except Exception as e: answer='ERROR '+str(e); errors.append(answer)
             history.append({'role':'user','content':answer[:12000]})
     except Exception as e: status='error'; errors.append(str(e))
-    pathlib.Path(out).write_text(json.dumps({'status':status,'calls':calls,'actions':actions,'tokens_accounted':tokens,'token_count_known':known,'seconds':round(time.monotonic()-start,2),'errors':errors}))
+    pathlib.Path(out).write_text(json.dumps({'status':status,'calls':calls,'actions':actions,'tokens_accounted':tokens,'token_count_known':known,'seconds':round(time.monotonic()-start,2),'errors':errors,'agent': role,'path':path}))
 if __name__=='__main__': main()

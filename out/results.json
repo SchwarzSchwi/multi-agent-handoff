@@ -1,0 +1,38 @@
+{
+  "states": [
+    "A_START"
+  ],
+  "expected": [
+    "A_START",
+    "A_HANDOFF",
+    "B_START",
+    "B_DONE"
+  ],
+  "handoff_fields": [
+    "goal",
+    "changed_files",
+    "current_status",
+    "remaining_work",
+    "verification",
+    "risks",
+    "next_steps"
+  ],
+  "checks": [],
+  "passed": 0,
+  "total_checks": 10,
+  "workers": [
+    {
+      "status": "budget_exhausted",
+      "calls": 8,
+      "actions": 8,
+      "tokens_accounted": 168,
+      "token_count_known": true,
+      "seconds": 13.31,
+      "errors": []
+    }
+  ],
+  "errors": [
+    "A handoff invalid"
+  ],
+  "success": false
+}
